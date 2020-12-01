@@ -12,20 +12,41 @@ const GET_COUNTRIES = gql`
         capital
         population
       }
+      _id
     }
   }
 `;
 
-const Flag = ({ flag: { emoji, svgFile, country: { name, capital, population } } }) => (
+const Flag = ({ flag: { emoji, svgFile, country: { name, capital, population }, _id } }) => (
   <Fragment>
-    Test
+    <h3>{emoji}</h3>
   </Fragment>
 )
 
 const App = () => {
+  const { loading, error, data } = useQuery(GET_COUNTRIES);
+
+  if(loading) return (
+    <h1>Loading...</h1>
+  )
+
+  if(error) return (
+    <h1>Something Went Wrong...</h1>
+  )
+
   return (
-    <div>
-      App
+    <div className="container">
+      <div className="row">
+        <div className="jumbotron text-center jumbotron-wrapper">
+          <h1>Countries of the World</h1>
+          <p>
+            <a className="btn btn-primary btn-lg" href="https://www.nationsonline.org/oneworld/countries_of_the_world.htm" target="_blank" role="button">Learn More</a>
+          </p>
+        </div>
+        {data.Flag.map((flag, index) => (
+          <Flag key={index} flag={flag} />
+        ))}
+      </div>
     </div>
   );
 }
