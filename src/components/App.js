@@ -12,14 +12,22 @@ const GET_COUNTRIES = gql`
         capital
         population
       }
-      _id
     }
   }
 `;
 
-const Flag = ({ flag: { emoji, svgFile, country: { name, capital, population }, _id } }) => (
+const Flag = ({ flag: { emoji, svgFile, country: { name, capital, population } } }) => (
   <Fragment>
-    <h3>{emoji}</h3>
+    <div className="col-sm-6 col-md-4 thumbnail-wrapper">
+      <div className="thumbnail">
+        <div className="caption">
+          <h3>{name}</h3>
+          <p>Capital: {capital}</p>
+          <p>Population: {population}</p>
+          <p>Flag: {emoji}</p>
+        </div>
+      </div>
+    </div>
   </Fragment>
 )
 
