@@ -1,3 +1,14 @@
+# React App that consumes and displays data from a GraphQL API
+## *To Start:*
+### 1) Clone this project
+### 2) Via your terminal, navigate to the project and type in:&nbsp; *yarn install*
+### 3) Then in terminal type:&nbsp;   *yarn start*
+
+<h4 align="center">App Image</h4>
+<p align="center">
+  <img src="public/assets/images/main-img.png" width="650" title="hover text">
+</p>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

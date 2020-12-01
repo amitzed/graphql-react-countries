@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+.container {
+  margin-top: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.jumbotron {
+  background: #6FBF42;
+  color: #242021
 }
+
+.thumbnail-wrapper {
+  text-align: center;
+  height: 25rem;
+}
+
+.thumbnail {
+  background: #00A2E3;
+}
+
+.thumbnail h3 {
+  color: #FAEBD7;
+}
+
+.thumbnail p {
+  color: firebrick;
+  font-size: 1.5rem;
+}
+
+.thumbnail p b {
+  color: chartreuse;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .emoji-wrap {
+    -webkit-animation: scaler infinite 10s linear alternate;
+    -ms-animation: scaler infinite 10s linear alternate;
+    -o-animation: scaler infinite 10s linear alternate;
+    -moz-animation: scaler infinite 10s linear alternate;
+    animation: scaler infinite 10s linear alternate;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+-webkit-@keyframes scaler {
   from {
-    transform: rotate(0deg);
+    transform: scale(1.5);
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1);
+  }
+}
+
+-ms-@keyframes scaler {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+-o-@keyframes scaler {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+-moz-@keyframes scaler {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaler {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
   }
 }

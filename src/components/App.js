@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
+import './App.css';
+
 const GET_COUNTRIES = gql`
   query {
     Flag {
@@ -18,13 +20,13 @@ const GET_COUNTRIES = gql`
 
 const Flag = ({ flag: { emoji, svgFile, country: { name, capital, population } } }) => (
   <Fragment>
-    <div className="col-sm-6 col-md-4 thumbnail-wrapper">
+    <div className="col-md-4 thumbnail-wrapper">
       <div className="thumbnail">
         <div className="caption">
           <h3>{name}</h3>
-          <p>Capital: {capital}</p>
-          <p>Population: {population}</p>
-          <p>Flag: {emoji}</p>
+          <p><b>Capital:</b> {capital}</p>
+          <p><b>Population:</b> {population}</p>
+          <p className="emoji-wrap"><b>Flag:</b> <span>{emoji}</span></p>
         </div>
       </div>
     </div>
